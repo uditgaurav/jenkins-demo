@@ -15,14 +15,8 @@ pipeline {
         stage('Pre-App-Check') {
             steps {
                  sh '''
-                    #!/bin/bash
-                    status_code=$(curl -s -o /dev/null -w "%{http_code}" ${APP_URL})
-                    if [ "$status_code" != "200" ]; then
-                        echo "The pre-chaos app health check is FAILED, status_code: $status_code"
-                        exit 1
-                    fi
-                    echo "The pre-chaos app health check is PASSED, status_code: $status_code"
-                    exit 0
+                    #!/bin/sh
+                    sh scripts/pre-chaos-check-url.sh
                  '''
             }
         }
@@ -112,14 +106,8 @@ pipeline {
         stage('Post-App-Check') {
             steps {
                  sh '''
-                    #!/bin/bash
-                    status_code=$(curl -s -o /dev/null -w "%{http_code}" ${APP_URL})
-                    if [ "$status_code" != "200" ]; then
-                        echo "The post-chaos app health check is FAILED, status_code: $status_code"
-                        exit 1
-                    fi
-                    echo "The post-chaos app health check is PASSED, status_code: $status_code"
-                    exit 0
+                    #!/bin/sh
+                    sh scripts/post-chaos-check-url.sh
                  '''
             }
         }
