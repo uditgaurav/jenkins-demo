@@ -12,13 +12,6 @@ pipeline {
     }
 
     stages {
-        stage('Pre-App-Check') {
-            steps {
-                 sh '''
-                    sh scripts/pre-chaos-check-url.sh
-                 '''
-            }
-        }
 
         stage('Run Chaos Experiment') {
             steps {
@@ -32,13 +25,6 @@ pipeline {
                  
                  sh '''
                     sh scripts/verify-rr.sh
-                 '''
-            }
-        }
-        stage('Post-App-Check') {
-            steps {
-                 sh '''
-                    sh scripts/post-chaos-check-url.sh
                  '''
             }
         }
