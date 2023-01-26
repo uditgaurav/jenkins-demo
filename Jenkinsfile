@@ -6,7 +6,7 @@ pipeline {
         ACCESS_ID    = 'adminEJZfO'
         ACCESS_KEY    = 'SgyGwfAMavIKZbS'
         PROJECT_ID    = '028d661b-f232-4fc0-84a0-1b34ac12f06c'
-        WORKFLOW_ID    = '075921b8-c143-49f2-aa24-099858e2a687'
+        WORKFLOW_ID    = '94d0e841-0bcb-476e-aa84-8892b78a9efd'
         APP_URL = "http://35.72.33.73:30001/"
                         
     }
