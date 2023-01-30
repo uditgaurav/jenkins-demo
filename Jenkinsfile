@@ -2,10 +2,10 @@ pipeline {
     agent any
     
     environment {
-        HCE_ENDPOINT = 'http://aba5dfc5499e34425aada9e2ad9ac6de-488634521.ap-northeast-1.elb.amazonaws.com:9091'
-        ACCESS_ID    = 'adminEJZfO'
-        ACCESS_KEY    = 'SgyGwfAMavIKZbS'
-        PROJECT_ID    = '028d661b-f232-4fc0-84a0-1b34ac12f06c'
+        HCE_ENDPOINT = 'http://a443010664b8e40de81dc327e1250566-1396626662.ap-northeast-1.elb.amazonaws.com:9091'
+        ACCESS_ID    = 'adminjIDxn'
+        ACCESS_KEY    = 'iWctPnYqomPKkfW'
+        PROJECT_ID    = '96032030-45b3-4f13-b443-83fc6efd2a75'
         WORKFLOW_ID    = '075921b8-c143-49f2-aa24-099858e2a687'
         APP_URL = "http://35.72.33.73:30001/"
                         
