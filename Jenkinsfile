@@ -31,7 +31,7 @@ pipeline {
                  '''
                  
                  sh '''
-                    sh scripts/verify-rr.sh
+                    sh scripts/verify-resilience-score.sh
                  '''
             }
         }
