@@ -2,12 +2,7 @@ pipeline {
     agent any
     
     environment {
-           ACCOUNT_ID = ${env.ACCOUNT_ID}
-           API_KEY    = ${env.API_KEY}
-           PROJECT_ID    = ${env.PROJECT_ID}
-           WORKFLOW_ID    = '9bd2855f-b822-464c-9906-0f9ebe824cc6'
-//         APP_URL = "https://www.google.com"
-                        
+           WORKFLOW_ID    = '9bd2855f-b822-464c-9906-0f9ebe824cc6'                    
     }
 
     stages {
@@ -23,6 +18,7 @@ pipeline {
         stage('Launch Chaos Experiment') {
             steps {
                  sh '''
+                    echo ${PROJECT_ID}
                     sh scripts/launch-chaos.sh
                  '''
                  
