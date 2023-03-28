@@ -3,6 +3,12 @@ curl -L https://github.com/uditgaurav/hce-api-template/releases/download/0.1.0-s
 
 chmod +x hce-api-saas
 
-./hce-api-saas generate --api launch-experiment --account-id=${ACCOUNT_ID} \
+notifyID=$(hce-api-saas generate --api launch-experiment --account-id=${ACCOUNT_ID} \
 --project-id ${PROJECT_ID} --workflow-id ${WORKFLOW_ID} \
---api-key ${API_KEY} --file-name hce-api.sh
+--api-key ${API_KEY} --file-name hce-api.sh | jq -r '.data.runChaosExperiment.notifyID' )
+
+echo "The notifyId is: $(notifyID)"
+
+./hce-api-saas generate --api monitor-experiment --account-id=${ACCOUNT_ID} \
+--project-id ${PROJECT_ID} --notifyID=$(notifyID)  \
+--api-key ${API_KEY} --file-name hce-api.sh --timeout="300" 
