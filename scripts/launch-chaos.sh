@@ -1,5 +1,5 @@
 #!/bin/bash
-curl -L https://github.com/uditgaurav/hce-api-template/releases/download/0.1.1-saas/hce-api-linux-amd64 -o hce-api-saas
+curl -L https://github.com/uditgaurav/hce-api-template/releases/download/0.1.0-saas/hce-api-linux-amd64 -o hce-api-saas
 
 chmod +x hce-api-saas
 
