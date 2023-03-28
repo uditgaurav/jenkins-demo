@@ -4,6 +4,9 @@ pipeline {
     environment {
            WORKFLOW_ID    = '9bd2855f-b822-464c-9906-0f9ebe824cc6'                    
     }
+    triggers{
+        githubPush()
+    }
 
     stages {
         
